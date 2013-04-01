@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
+    fixtures :products
    test "product price must be positve" do
     product = Product.new(title: "my Book Title",
                           description: "yyy",
