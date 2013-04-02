@@ -12,11 +12,15 @@
   img {
     float: left;
   }
+  p {
+    float: right;
+    margin-top: 25px;
+  }
 }
 
 .entry {
     overflow: auto;
-    margin-top: 1em;
+    margin-top: 2em;
     border-bottom: 5px solid #77d;
     min-height: 100px;
 }

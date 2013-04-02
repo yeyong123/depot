@@ -11,7 +11,7 @@
 <body id="store">
 <div id="banner">
   <%= image_tag("logo.png") %>
-  <%= @page_title || "程序书书架" %>
+  <%= @page_title || "程序书架" %>
 </div>
   <div id="columns">
     <div id="side">

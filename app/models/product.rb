@@ -1,6 +1,7 @@
 #encoding:UTF-8
 class Product < ActiveRecord::Base
   attr_accessible :title, :description, :image_url, :price
+  
   default_scope order: 'title'
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item

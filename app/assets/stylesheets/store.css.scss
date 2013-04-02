@@ -12,6 +12,11 @@
   img {
     float: left;
   }
+  p {
+    float: right;
+    margin-top: 25px;
+    color: black;
+  }
 }
 
 .entry {
@@ -45,3 +50,20 @@
 #store .entry form, #store .entry form div {
   display: inline;
   }
+
+#store .cart_title {
+    font: 120% bold;
+  }
+#store .item_price, #store .total_line {
+  text-align: right;
+  padding-top: 8px;
+  font-size: 16px;
+}
+#store .total_line .total_cell {
+  font-weight: bold;
+  padding-top: 5px;
+  font-size: 18px;
+  border-top: 2px solid red;
+}
+
+

@@ -1,3 +1,4 @@
+#encoding:UTF-8
 class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
@@ -13,12 +14,17 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    begin
     @cart = Cart.find(params[:id])
-
+    rescue ActiveRecord::RecordNotFound
+    logger.error "Attempt to access invalid cart #{params[:id]}"
+    redirect_to store_url, notice: "无效的购物车"
+    else
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @cart }
     end
+  end
   end
 
   # GET /carts/new
@@ -72,11 +78,11 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
-    @cart = Cart.find(params[:id])
+    @cart = current_cart
     @cart.destroy
-
+    session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to store_url, notice: "你的购物车已经清空!" }
       format.json { head :no_content }
     end
   end
