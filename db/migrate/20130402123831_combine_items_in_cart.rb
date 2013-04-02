@@ -1,3 +1,4 @@
+#encoding:UTF-8
 class CombineItemsInCart < ActiveRecord::Migration
   def up
     Cart.all.each do |cart|
