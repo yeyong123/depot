@@ -1,4 +1,5 @@
 #encoding:UTF-8
+<!DOCTYPE html>
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
@@ -10,7 +11,11 @@
   <%= sanitize(product.description) %>
   <div class="price_line">
     <span class="price"><%= number_to_currency(product.price) %></span>
-    <%= button_to "加入购物车", line_items_path(product_id: product) %>
+    <!-- START_HIGHLIGHT -->
+          <%= button_to '加入购物车', line_items_path(product_id: product),
+            remote: true %>
+<!-- END_HIGHLIGHT -->
+   
   </div>
 </div>
 <% end %>
