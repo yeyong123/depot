@@ -49,6 +49,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        Notifier.order_received(@order).deliver
         format.html { redirect_to store_url, notice: "订单已经创建!" }
         format.json { render json: @order, status: :created, location: @order }
       else

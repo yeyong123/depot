@@ -1,0 +1,6 @@
+#encoding:UTF-8
+亲爱的<%= @order.name %>
+  感谢你订购我们的产品，
+  你可以在查看你订单详情：
+  <%= render @order.line_items %>
+  当你的订单发送时，我们会发送一份邮件给你！

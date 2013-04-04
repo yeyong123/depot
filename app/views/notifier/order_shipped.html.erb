@@ -1,0 +1,10 @@
+#encoding:UTF-8
+<h3>订单发货提醒</h3>
+  <p>
+  为了让你了解你的订单发送状况。
+  </p>
+  <table>
+    <tr><th colspan="2">Qty</th><th>详细</th></tr>
+    <%= render @order.line_items %>
+  </table>
+    
