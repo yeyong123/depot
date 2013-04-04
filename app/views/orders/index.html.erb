@@ -1,0 +1,31 @@
+#encoding:UTF-8
+<h1>订购清单</h1>
+<div class="pagination" style="color:blue"><%= will_paginate @orders %></div>
+<table>
+  <tr>
+    <th>用户</th>
+    <th>地址</th>
+    <th>邮箱</th>
+    <th>支付方式</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.name %></td>
+    <td><%= order.address %></td>
+    <td><%= order.email %></td>
+    <td><%= order.pay_type %></td>
+    <td><%= link_to '详细', order %></td>
+    <td><%= link_to '编辑', edit_order_path(order) %></td>
+    <td><%= link_to '删除', order, method: :delete, data: { confirm: '确定删除吗？' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新订单', new_order_path %>
+<div class="pagination" style="color:blue"><%= will_paginate @orders %></div>
