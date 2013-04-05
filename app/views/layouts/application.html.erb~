@@ -1,6 +1,5 @@
 #encoding:UTF-8
 <!DOCTYPE html>
-
 <html>
 <head>
   <title>在线商店</title>
@@ -27,14 +26,18 @@
     <a href="#">首页</a><br/>
     <a href="#">动态</a><br/>
     <a href="#">最新信息</a><br/>
-    <a href="#">联系我</a><br/>
-    <p></p>
-    <div>
-    <a href="#">订购清单</a><br/>
-    <a href="#">产品</a><br/>
-    <a href="#">用户</a><br/>
-  </div>
-  </div>
+    <a href="#">联系我</a><br/><br/>
+   
+   <% if session[:user_id] %>
+   
+    <%= link_to "订单", orders_path %><br />
+    <%= link_to "产品", products_path %><br />
+    <%= link_to "用户", users_path %><br/>
+    <%= button_to "退出", logout_path, method: :delete %>
+   
+    <% end %>
+ 
+ </div>
   
     <div id="main">
       <%= yield %>
