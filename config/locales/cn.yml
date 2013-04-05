@@ -1,0 +1,53 @@
+cn:
+  
+   layouts:
+    application:
+      title:      "程序员书屋"
+      home:       "首页"
+      questions:  "个人简历"
+      news:       "最新动态"
+      contact:    "联系我"
+
+   store:
+    index:
+      title_html:   "商品目录"
+      add_html:     "加入购物车"
+
+   carts:
+    cart:
+      title:        "购物车"
+      empty:        "清空购物车"
+      checkout:     "付款"
+
+
+   number:
+    currency:
+      format:
+        unit:       "￥"
+        precision:   2
+        separator:  "."
+        delimiter:  ","
+        format:     "%u%n"
+
+   orders:
+    new:
+      legend:          "请输入你的信息"
+    form:
+      name_html:       "用户名"
+      address_html:    "收货地址"
+      email_html:      "邮箱"
+      pay_type_html:   "支付方式"
+      pay_prompt_html: "选择支付方式"
+      submit_html:     "确认提交"
+
+   activerecord:
+     errors:
+       messages:
+         inclusion:     "错误信息"
+         blank:         "检查有错误"
+   errors:
+     template:     
+      body:          "请输入用户名/地址/邮箱和支付方式"
+      header:
+        one:         "1 个错误请检查"
+        other:       "错误,核对信息。"

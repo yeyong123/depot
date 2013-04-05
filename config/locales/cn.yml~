@@ -1,0 +1,14 @@
+cn:
+  
+   layouts:
+    application:
+      title:      "Publiciones de Pragmatic"
+      home:       "Inicio"
+      questions:  "Preguntas"
+      news:       "Noticias"
+      contact:    "Contaccto"
+
+   store:
+    index:
+      title_html:   "Su cat&aacute;logo de Pragmatic"
+      add_html:     "A&ntilde;adir al Carrito"

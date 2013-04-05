@@ -6,7 +6,8 @@ Depot::Application.routes.draw do
       post   'login' => :create
       delete 'logout'=>:destroy
     end
-  
+
+scope '(:locale)' do
   resources :products
   resources :users
   resources :line_items
@@ -20,6 +21,7 @@ Depot::Application.routes.draw do
   resources :products do
     get :who_bought, on: :member
   end
+ end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
